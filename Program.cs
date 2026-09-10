@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+
+interface IClient
+{
+    void GetMessage(string text);
+}
 
 class Client
 {
