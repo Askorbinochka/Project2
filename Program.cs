@@ -18,14 +18,19 @@ class Client
 
 class Shop
 {
+    public List<Client> ClientsList = new List<Client>();
     public void AddClient(Client c)
     {
-
+        ClientsList.Add(c);
     }
 
     public void SendMessage(string text)
     {
         Console.WriteLine("\n НОВА АКЦІЯ: " + text);
+        foreach (Client c in ClientsList)
+        {
+            c.GetMessage(text);
+        }
     }
 }
 
