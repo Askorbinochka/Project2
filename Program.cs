@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 class Client
 {
@@ -38,6 +39,16 @@ class Program
 {
     static void Main()
     {
+        Console.OutputEncoding = Encoding.UTF8;
+        Shop myShop = new Shop();
+
+        Client client1 = new Client("Христина");
+        Client client2 = new Client("Арсен");
+
+        myShop.AddClient(client1);
+        myShop.AddClient(client2);
+
+        myShop.SendMessage("Знижка -50% на все!");
 
     }
 }
