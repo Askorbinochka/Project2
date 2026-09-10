@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 interface IClient
 {
@@ -28,18 +29,25 @@ class Client : IClient
     }
 }
 
-class Shop
+class Shop : IShop
 {
-    public List<Client> ClientsList = new List<Client>();
-    public void AddClient(Client c)
+    public List<IClient> ClientsList = new List<IClient>();
+
+    public void AddClient(IClient c)
     {
         ClientsList.Add(c);
     }
 
+    public void RemoveClient(IClient c)
+    {
+        ClientsList.Remove(c);
+    }
+
     public void SendMessage(string text)
     {
-        Console.WriteLine("\n НОВА АКЦІЯ: " + text);
-        foreach (Client c in ClientsList)
+        Console.WriteLine("\n--- НОВА АКЦІЯ: " + text + " ---");
+
+        foreach (IClient c in ClientsList)
         {
             c.GetMessage(text);
         }
@@ -51,7 +59,7 @@ class Program
     static void Main()
     {
         Console.OutputEncoding = Encoding.UTF8;
-        Shop myShop = new Shop();
+        /*Shop myShop = new Shop();
 
         Client client1 = new Client("Христина");
         Client client2 = new Client("Арсен");
@@ -59,7 +67,7 @@ class Program
         myShop.AddClient(client1);
         myShop.AddClient(client2);
 
-        myShop.SendMessage("Знижка -50% на все!");
+        myShop.SendMessage("Знижка -50% на все!");*/
 
     }
 }
