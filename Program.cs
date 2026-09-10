@@ -13,9 +13,9 @@ interface IShop
     void SendMessage(string text);
 }
 
-class Client
+class Client : IClient
 {
-    public string Name { get; set; }
+    public string Name;
 
     public Client(string name)
     {
