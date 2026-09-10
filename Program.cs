@@ -6,6 +6,13 @@ interface IClient
     void GetMessage(string text);
 }
 
+interface IShop
+{
+    void AddClient(IClient c);
+    void RemoveClient(IClient c);
+    void SendMessage(string text);
+}
+
 class Client
 {
     public string Name { get; set; }
