@@ -16,6 +16,19 @@ class Client
     }
 }
 
+class Shop
+{
+    public void AddClient(Client c)
+    {
+
+    }
+
+    public void SendMessage(string text)
+    {
+        Console.WriteLine("\n НОВА АКЦІЯ: " + text);
+    }
+}
+
 class Program
 {
     static void Main()
